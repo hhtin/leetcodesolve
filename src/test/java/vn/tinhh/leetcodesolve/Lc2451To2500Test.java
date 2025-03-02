@@ -12,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Lc2451To2500Test {
 
     @Autowired
-    private Lc2451To2500 Lc2451To2500;
+    private Lc2451To2500 lc2451To2500;
 
     @Test
     void LC2460_case1() {
         int[] nums = {1,2,2,1,1,0};
-        int[] rtValue= Lc2451To2500.applyOperations(nums);
+        int[] rtValue= lc2451To2500.applyOperations(nums);
 
         int[] expected = {1,4,2,0,0,0};
         assertTrue(Arrays.equals(rtValue,expected));
@@ -26,7 +26,7 @@ public class Lc2451To2500Test {
     @Test
     void LC2460_case2() {
         int[] nums = {0,1};
-        int[] rtValue= Lc2451To2500.applyOperations(nums);
+        int[] rtValue= lc2451To2500.applyOperations(nums);
 
         int[] expected = {1,0};
         assertTrue(Arrays.equals(rtValue,expected));
@@ -36,7 +36,7 @@ public class Lc2451To2500Test {
     @Test
     void LC2460_case3() {
         int[] nums = {847,847,0,0,0,399,416,416,879,879,206,206,206,272};
-        int[] rtValue= Lc2451To2500.applyOperations(nums);
+        int[] rtValue= lc2451To2500.applyOperations(nums);
 
         int[] expected = {1694,399,832,1758,412,206,272,0,0,0,0,0,0,0};
         assertTrue(Arrays.equals(rtValue,expected));
