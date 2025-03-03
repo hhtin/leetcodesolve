@@ -6,14 +6,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-class Lc2551to2600Test {
+class Lc2551To2600Test {
 
     @Autowired
-    private Lc2551to2600 lc2551to2600;
+    private Lc2551To2600 lc2551to2600;
 
     @Test
     void LC2570_case1() {

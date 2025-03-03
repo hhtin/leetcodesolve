@@ -1,12 +1,11 @@
 package vn.tinhh.leetcodesolve;
 
 import org.springframework.stereotype.Component;
-import org.springframework.util.ObjectUtils;
 
 import java.util.Arrays;
 
 @Component
-public class Lc2551to2600 {
+public class Lc2551To2600 {
 
     // 2570
     public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
