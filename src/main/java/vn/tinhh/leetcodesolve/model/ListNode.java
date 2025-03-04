@@ -1,9 +1,5 @@
 package vn.tinhh.leetcodesolve.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
 public class ListNode {
     public int val;
     public ListNode next;
