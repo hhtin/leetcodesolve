@@ -65,4 +65,25 @@ public class Lc1to50 {
         }
         return returnValue;
     }
+
+    //9
+    public boolean isPalindrome(int x) {
+        if (x < 0) return false;
+        if (x < 10) return true;
+        String str = String.valueOf(x);
+        int length = str.length() / 2;
+        String first = "";
+        String last = "";
+        for (int i = 0; i < length; i++) {
+            first = str.substring(0, 1);
+            last = str.substring(str.length() - 1, str.length());
+            if (1 < str.length() - 1) {
+                str = str.substring(1, str.length() - 1);
+            }
+            if (!first.equals(last)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

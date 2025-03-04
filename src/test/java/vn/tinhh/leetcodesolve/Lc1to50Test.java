@@ -71,4 +71,44 @@ class Lc1to50Test {
         System.out.println(rtValue);
         System.out.println(expected);
     }
+
+    @Test
+    void LC9_case1() {
+        int input = 121;
+        boolean rtValue = lc1to50.isPalindrome(input);
+        boolean expected = true;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC9_case2() {
+        int input = -121;
+        boolean rtValue = lc1to50.isPalindrome(input);
+        boolean expected = false;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC9_case3() {
+        int input = 10;
+        boolean rtValue = lc1to50.isPalindrome(input);
+        boolean expected = false;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC9_case26() {
+        int input = 2222222;
+        boolean rtValue = lc1to50.isPalindrome(input);
+        boolean expected = true;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC9_case11510() {
+        int input = 1000030001;
+        boolean rtValue = lc1to50.isPalindrome(input);
+        boolean expected = false;
+        assertTrue(rtValue == expected);
+    }
 }
