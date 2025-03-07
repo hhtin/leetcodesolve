@@ -11,17 +11,30 @@ public class Lc2501To2550 {
 
     //2523
     public int[] closestPrimes(int left, int right) {
-        int[] ans = new int[2];
-        int pos = 0;
+        int[] ans = new int[]{-1, -1};
+        int pos1 = 0;
+        int pos2 = 0;
+        int currentSpace = 0;
+        int smartestPrimeSpace = 0;
         for (int i = left; i <= right; i++) {
             if (algorithmUtils.isPrime(i)) {
-                ans[pos] = i;
-                pos++;
-                if (pos == 2) {
-                    return ans;
+                if (pos1 == 0) {
+                    pos1 = i;
+                } else {
+                    pos2 = i;
+                    currentSpace = pos2 - pos1;
+                    if (smartestPrimeSpace == 0) {
+                        smartestPrimeSpace = currentSpace;
+                        ans = new int[]{pos1, pos2};
+                    }
+                    if (currentSpace < smartestPrimeSpace) {
+                        smartestPrimeSpace = currentSpace;
+                        ans = new int[]{pos1, pos2};
+                    }
+                    pos1 = i;
                 }
             }
         }
-        return new int[]{-1, -1};
+        return ans;
     }
 }
