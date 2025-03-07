@@ -41,5 +41,8 @@ public class Lc2551To2600 {
         return res;
     }
 
-
+    //2579
+    public long coloredCells(int n) {
+        return 1+(long)2*n*(n-1);
+    }
 }

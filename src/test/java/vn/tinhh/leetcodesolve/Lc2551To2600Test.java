@@ -31,4 +31,28 @@ class Lc2551To2600Test {
         int[][] expected = {{1, 3}, {2, 4}, {3, 6}, {4, 3}, {5, 5}};
         assertTrue(Arrays.deepEquals(rtValue, expected));
     }
+
+    @Test
+    void LC2579_case1() {
+        int input = 1;
+        long rtValue = lc2551to2600.coloredCells(input);
+        long expected = 1L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2579_case2() {
+        int input = 2;
+        long rtValue = lc2551to2600.coloredCells(input);
+        long expected = 5L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2579_case52() {
+        int input = 69675;
+        long rtValue = lc2551to2600.coloredCells(input);
+        long expected = 9709071901L;
+        assertTrue(rtValue == expected);
+    }
 }
