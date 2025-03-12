@@ -10,6 +10,7 @@ public class Lc2501To2550 {
     private AlgorithmUtils algorithmUtils;
 
     //2523
+    //https://leetcode.com/problems/closest-prime-numbers-in-range/description/
     public int[] closestPrimes(int left, int right) {
         int[] ans = new int[]{-1, -1};
         int pos1 = 0;

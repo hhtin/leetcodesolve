@@ -73,6 +73,33 @@ class Lc1to50Test {
     }
 
     @Test
+    void LC6_case1() {
+        String inputString = "PAYPALISHIRING";
+        int numRows = 3;
+        String rtValue = lc1to50.convert(inputString, numRows);
+        String expected = "PAHNAPLSIIGYIR";
+        assertEquals(expected, rtValue);
+    }
+
+    @Test
+    void LC6_case2() {
+        String inputString = "PAYPALISHIRING";
+        int numRows = 4;
+        String rtValue = lc1to50.convert(inputString, numRows);
+        String expected = "PINALSIGYAHRPI";
+        assertEquals(expected, rtValue);
+    }
+
+    @Test
+    void LC6_case3() {
+        String inputString = "A";
+        int numRows = 1;
+        String rtValue = lc1to50.convert(inputString, numRows);
+        String expected = "A";
+        assertEquals(expected, rtValue);
+    }
+
+    @Test
     void LC9_case1() {
         int input = 121;
         boolean rtValue = lc1to50.isPalindrome(input);

@@ -9,6 +9,7 @@ import java.util.List;
 public class Lc2451To2500 {
 
     // 2460
+    //https://leetcode.com/problems/apply-operations-to-an-array/description/
     public int[] applyOperations(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] == nums[i + 1]) {

@@ -11,6 +11,7 @@ import java.util.Map;
 public class Lc1751To1800 {
 
     //1780
+    //https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/description/
     public boolean checkPowersOfThree(int n) {
         if (n % 3 == 1) {
             n = n - 1;

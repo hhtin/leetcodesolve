@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class Lc1701To1750 {
 
     //1749
+    //https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray/description/
     public int maxAbsoluteSum(int[] nums) {
         int size = nums.length;
         int sumInPosPlus = 0; // Giá trị hiện tại của Tổng dương

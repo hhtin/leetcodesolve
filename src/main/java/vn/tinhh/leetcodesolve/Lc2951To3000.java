@@ -8,6 +8,8 @@ import java.util.List;
 @Component
 public class Lc2951To3000 {
 
+    //2965
+    //https://leetcode.com/problems/find-missing-and-repeated-values/description/
     public int[] findMissingAndRepeatedValues(int[][] grid) {
         int lastPos = grid.length * grid[0].length; // số cuôi cung của dãy
         int sumOf1ToLastPos = lastPos * (lastPos + 1) / 2;

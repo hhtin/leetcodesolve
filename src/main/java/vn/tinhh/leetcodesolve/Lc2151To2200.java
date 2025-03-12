@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
 public class Lc2151To2200 {
 
     //2161
+    //https://leetcode.com/problems/partition-array-according-to-given-pivot/description/
     public int[] pivotArray(int[] nums, int pivot) {
         // Danh sách nhỏ hơn pivot (theo thứ tự đúng)
         int[] before = new int[nums.length];

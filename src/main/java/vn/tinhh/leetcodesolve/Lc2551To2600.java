@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class Lc2551To2600 {
 
     // 2570
+    //https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values/description/
     public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
         int maxPos = Math.max(nums1[nums1.length - 1][0], nums2[nums2.length - 1][0]);
         int[][] alternativeResult = new int[maxPos][2];
@@ -42,6 +43,7 @@ public class Lc2551To2600 {
     }
 
     //2579
+    //https://leetcode.com/problems/count-total-number-of-colored-cells/description/
     public long coloredCells(int n) {
         return 1+(long)2*n*(n-1);
     }

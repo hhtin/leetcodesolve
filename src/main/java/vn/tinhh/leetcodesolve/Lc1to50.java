@@ -7,11 +7,13 @@ import vn.tinhh.leetcodesolve.model.ListNode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @Component
 public class Lc1to50 {
 
     //1
+    //https://leetcode.com/problems/two-sum/description/
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         int minusValue = 0;
@@ -29,6 +31,7 @@ public class Lc1to50 {
     }
 
     //2
+    //https://leetcode.com/problems/add-two-numbers/description/
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode returnValue = new ListNode();
         boolean flag = false;
@@ -66,7 +69,46 @@ public class Lc1to50 {
         return returnValue;
     }
 
+    //6
+    //https://leetcode.com/problems/zigzag-conversion/description/
+    public String convert(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
+        Map<Integer, String> newMap = new HashMap<>();
+        int pos = 1;
+        boolean isUpper = false;
+        while (!s.isEmpty()) {
+            String currentChar = s.substring(0, 1);
+            s = s.substring(1);
+
+            String pastChar = newMap.get(pos);
+            String newChar = "";
+            if (Objects.isNull(pastChar)) {
+                newChar = currentChar;
+            } else {
+                newChar = pastChar + currentChar;
+            }
+            newMap.put(pos, newChar);
+            if (pos == numRows || pos == 1) {
+                isUpper = !isUpper;
+            }
+            if (isUpper) {
+                pos++;
+            } else {
+                pos--;
+            }
+
+        }
+        StringBuilder rtValue = new StringBuilder();
+        for (Integer key : newMap.keySet()) {
+            rtValue.append(newMap.get(key));
+        }
+        return rtValue.toString();
+    }
+
     //9
+    //https://leetcode.com/problems/palindrome-number/description/
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
         if (x < 10) return true;
