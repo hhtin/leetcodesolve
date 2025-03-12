@@ -37,4 +37,27 @@ public class Lc2501To2550 {
         }
         return ans;
     }
+
+    //2529
+    //https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/?envType=daily-question&envId=2025-03-12
+    public int maximumCount(int[] nums) {
+        if (nums[0] > 0 || nums[nums.length - 1] < 0) {
+            return nums.length;
+        }
+        int negativeSum = 0;
+        int positiveSum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0 && i + 1 < nums.length && (nums[i + 1] == 0 || nums[i + 1] > 0)) {
+                negativeSum = i + 1;
+            }
+            if (nums[i] > 0) {
+                if (negativeSum == 0) {
+                    negativeSum = i;
+                }
+                positiveSum = nums.length - i;
+                break;
+            }
+        }
+        return Math.max(negativeSum, positiveSum);
+    }
 }

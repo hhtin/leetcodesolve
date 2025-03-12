@@ -30,4 +30,28 @@ class Lc2501To2550Test {
         int[] expected = {-1, -1};
         assertTrue(Arrays.equals(rtValue, expected));
     }
+
+    @Test
+    void LC2529_case1() {
+        int[] nums = {-2, -1, -1, 1, 2, 3};
+        int rtValue = lc2501To2550.maximumCount(nums);
+        int expected = 3;
+        assertEquals(expected, rtValue);
+    }
+
+    @Test
+    void LC2529_case2() {
+        int[] nums = {-3, -2, -1, 0, 0, 1, 2};
+        int rtValue = lc2501To2550.maximumCount(nums);
+        int expected = 3;
+        assertEquals(expected, rtValue);
+    }
+
+    @Test
+    void LC2529_case3() {
+        int[] nums = {5, 20, 66, 1314};
+        int rtValue = lc2501To2550.maximumCount(nums);
+        int expected = 4;
+        assertEquals(expected, rtValue);
+    }
 }
