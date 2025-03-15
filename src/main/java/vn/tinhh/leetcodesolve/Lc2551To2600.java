@@ -7,6 +7,34 @@ import java.util.Arrays;
 @Component
 public class Lc2551To2600 {
 
+    //2560
+    //https://leetcode.com/problems/house-robber-iv/description/?envType=daily-question&envId=2025-03-15
+    // not solve
+    public int minCapability(int[] nums, int k) {
+        int left = 1, right = Arrays.stream(nums).max().getAsInt(), ans = right;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (canRob(nums, mid, k)) {
+                ans = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+    public boolean canRob(int[] nums, int mid, int k) {
+        int count = 0, n = nums.length;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] <= mid) {
+                count++;
+                i++;
+            }
+        }
+        return count >= k;
+    }
+
     // 2570
     //https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values/description/
     public int[][] mergeArrays(int[][] nums1, int[][] nums2) {

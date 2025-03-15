@@ -15,6 +15,24 @@ class Lc2551To2600Test {
     private Lc2551To2600 lc2551to2600;
 
     @Test
+    void LC2560_case1() {
+        int[] num = {2, 3, 5, 9};
+        int k = 2;
+        int returnValue = lc2551to2600.minCapability(num, k);
+        int expected = 5;
+        assertTrue(returnValue == expected);
+    }
+
+    @Test
+    void LC2560_case2() {
+        int[] num = {2,7,9,3,1};
+        int k = 2;
+        int returnValue = lc2551to2600.minCapability(num, k);
+        int expected = 2;
+        assertTrue(returnValue == expected);
+    }
+
+    @Test
     void LC2570_case1() {
         int[][] num1 = {{1, 2}, {2, 3}, {4, 5}};
         int[][] num2 = {{1, 4}, {3, 2}, {4, 1}};
