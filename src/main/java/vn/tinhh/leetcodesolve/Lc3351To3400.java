@@ -2,6 +2,9 @@ package vn.tinhh.leetcodesolve;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class Lc3351To3400 {
 
@@ -50,5 +53,20 @@ public class Lc3351To3400 {
             decrement += line[i]; // Accumulate applied decrements
         }
         return k;
+    }
+
+    //3375
+    //https://leetcode.com/problems/minimum-operations-to-make-array-values-equal-to-k/?envType=daily-question&envId=2025-04-09
+    public int minOperations(int[] nums, int k) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < k) {
+                return -1;
+            }
+            if (!list.contains(nums[i]) && nums[i] != k) {
+                list.add(nums[i]);
+            }
+        }
+        return list.size();
     }
 }
