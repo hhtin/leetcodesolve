@@ -28,4 +28,56 @@ class Lc2951To3000Test {
         int[] expected = {9, 5};
         assertTrue(Arrays.equals(rtValue, expected));
     }
+
+    @Test
+    void LC2999_case1() {
+        long start = 1L;
+        long finish = 6000L;
+        int limit = 4;
+        String s = "124";
+        long rtValue = lc2951To3000.numberOfPowerfulInt(start, finish, limit, s);
+        long expected = 5L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2999_case2() {
+        long start = 15L;
+        long finish = 215L;
+        int limit = 6;
+        String s = "10";
+        long rtValue = lc2951To3000.numberOfPowerfulInt(start, finish, limit, s);
+        long expected = 2L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2999_case3() {
+        long start = 1000L;
+        long finish = 2000L;
+        int limit = 4;
+        String s = "3000";
+        long rtValue = lc2951To3000.numberOfPowerfulInt(start, finish, limit, s);
+        long expected = 0L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2999_case97() {
+        long start = 20L;
+        long finish = 1159L;
+        int limit = 5;
+        String s = "20";
+        long rtValue = lc2951To3000.numberOfPowerfulInt(start, finish, limit, s);
+        long expected = 8L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2999_case99() {
+        Integer a=120;
+        Integer b=120;
+        int c=120;
+        System.out.println(a==b && b==c);
+    }
 }

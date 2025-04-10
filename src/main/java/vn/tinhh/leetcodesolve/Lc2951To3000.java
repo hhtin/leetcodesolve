@@ -29,4 +29,38 @@ public class Lc2951To3000 {
         rtValue[1] = sumOf1ToLastPos - sumReality;
         return rtValue;
     }
+
+    //2999
+    //https://leetcode.com/problems/count-the-number-of-powerful-integers/?envType=daily-question&envId=2025-04-10
+    public long numberOfPowerfulInt(long start, long finish, int limit, String s) {
+        int currentNumCheck = 0;
+        String checkString = "";
+        int checkNum = Integer.parseInt(s);
+        long rtValue = 0L;
+        if (start <= checkNum && checkNum <= finish) {
+            rtValue += 1L;
+        }
+        if(checkNum>finish){
+            return 0;
+        }
+        while (true) {
+            currentNumCheck += 1;
+            if (currentNumCheck > limit) {
+                break;
+            }
+            int cacheNumCheck = currentNumCheck;
+            while (true) {
+                checkString = cacheNumCheck + s;
+                checkNum = Integer.parseInt(checkString);
+                if (checkNum > finish) {
+                    break;
+                }
+                if (start <= checkNum && checkNum <= finish) {
+                    rtValue += 1L;
+                }
+                cacheNumCheck = cacheNumCheck * 10;
+            }
+        }
+        return rtValue;
+    }
 }
