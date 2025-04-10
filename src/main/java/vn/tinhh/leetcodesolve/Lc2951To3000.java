@@ -33,34 +33,45 @@ public class Lc2951To3000 {
     //2999
     //https://leetcode.com/problems/count-the-number-of-powerful-integers/?envType=daily-question&envId=2025-04-10
     public long numberOfPowerfulInt(long start, long finish, int limit, String s) {
-        int currentNumCheck = 0;
-        String checkString = "";
-        int checkNum = Integer.parseInt(s);
-        long rtValue = 0L;
-        if (start <= checkNum && checkNum <= finish) {
-            rtValue += 1L;
+        long suff = 0L;
+
+        for (char c : s.toCharArray()){
+            suff = suff * 10 + c - '0';
         }
-        if(checkNum>finish){
-            return 0;
-        }
-        while (true) {
-            currentNumCheck += 1;
-            if (currentNumCheck > limit) {
-                break;
+
+        if (suff > finish) return 0;
+
+        long div = (long) Math.pow(10, s.length());
+        long ps = start / div;
+        long pf = finish / div;
+
+        if (finish % div >= suff) pf++;
+        if (start % div > suff) ps++;
+
+        return getAvailNum(pf, limit) - getAvailNum(ps, limit);
+    }
+
+    private long getAvailNum(long num, long limit){
+        if (num == 0) return 0;
+        if (limit == 9) return num;
+
+        int digits = (int) Math.log10(num);
+        long div = (long) Math.pow(10, digits);
+        long res = 0L;
+
+        for (int i = digits; i >= 0; i--){
+            int d = (int) (num / div);
+
+            if (d > limit){
+                return res + (long) Math.pow(limit + 1, i + 1);
+            } else {
+                res += d * (long) Math.pow(limit + 1, i);
             }
-            int cacheNumCheck = currentNumCheck;
-            while (true) {
-                checkString = cacheNumCheck + s;
-                checkNum = Integer.parseInt(checkString);
-                if (checkNum > finish) {
-                    break;
-                }
-                if (start <= checkNum && checkNum <= finish) {
-                    rtValue += 1L;
-                }
-                cacheNumCheck = cacheNumCheck * 10;
-            }
+
+            num %= div;
+            div /= 10;
         }
-        return rtValue;
+
+        return res;
     }
 }

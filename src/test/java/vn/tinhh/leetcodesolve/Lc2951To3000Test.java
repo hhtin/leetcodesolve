@@ -72,12 +72,4 @@ class Lc2951To3000Test {
         long expected = 8L;
         assertTrue(rtValue == expected);
     }
-
-    @Test
-    void LC2999_case99() {
-        Integer a=120;
-        Integer b=120;
-        int c=120;
-        System.out.println(a==b && b==c);
-    }
 }
