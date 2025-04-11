@@ -11,7 +11,7 @@ public class Utils {
 
     // Return the number of substrings containing every vowel with at most k
     // consonants.
-    public long substringsWithAtMost(String word, int k) {
+    public static long substringsWithAtMost(String word, int k) {
         if (k == -1)
             return 0;
 
@@ -51,7 +51,25 @@ public class Utils {
         return res;
     }
 
-    private boolean isVowel(char c) {
+    public static boolean isVowel(char c) {
         return "aeiou".indexOf(c) != -1;
+    }
+
+    public static int sumOfAllNumbers(int input) {
+        String s = String.valueOf(input);
+        int rtValue = 0;
+        for (int i = 0; i < s.length(); i++) {
+            rtValue = rtValue + s.charAt(i);
+        }
+        return rtValue;
+    }
+
+    public static int sumOfAllNumbers(String input) {
+        int rtValue = 0;
+        String[] inputSplit = input.split("");
+        for (int i = 0; i < inputSplit.length; i++) {
+            rtValue = rtValue + Integer.parseInt(inputSplit[i]);
+        }
+        return rtValue;
     }
 }
