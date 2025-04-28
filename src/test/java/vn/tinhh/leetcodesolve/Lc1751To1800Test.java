@@ -37,4 +37,31 @@ class Lc1751To1800Test {
         boolean expect = false;
         assertTrue(rtValue == expect);
     }
+
+    @Test
+    void LC1790_case1() {
+        String s1 = "bank";
+        String s2 = "kanb";
+        boolean rtValue = lc1751To1800.areAlmostEqual(s1, s2);
+        boolean expect = true;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1790_case2() {
+        String s1 = "attack";
+        String s2 = "defend";
+        boolean rtValue = lc1751To1800.areAlmostEqual(s1, s2);
+        boolean expect = false;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1790_case3() {
+        String s1 = "kelb";
+        String s2 = "kelb";
+        boolean rtValue = lc1751To1800.areAlmostEqual(s1, s2);
+        boolean expect = true;
+        assertTrue(rtValue == expect);
+    }
 }

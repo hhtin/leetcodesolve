@@ -38,4 +38,31 @@ public class Lc1751To1800 {
         }
         return false;
     }
+
+    //1790
+    //https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/?envType=daily-question&envId=2025-04-28
+    public boolean areAlmostEqual(String s1, String s2) {
+        Character charS1 = null;
+        Character charS2 = null;
+        boolean isChange = false;
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) != s2.charAt(i)) {
+                if (isChange) {
+                    return false;
+                }
+                if (charS1 == null) {
+                    charS1 = s1.charAt(i);
+                    charS2 = s2.charAt(i);
+                } else if (charS1 != s2.charAt(i) || charS2 != s1.charAt(i)) {
+                    return false;
+                } else {
+                    isChange = true;
+                }
+            }
+        }
+        if (charS1 == null) {
+            return true;
+        }
+        return isChange;
+    }
 }
