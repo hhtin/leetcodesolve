@@ -27,4 +27,29 @@ public class Lc1351To1400 {
 
         return count;
     }
+
+    //1399
+    //https://leetcode.com/problems/count-largest-group/?envType=daily-question&envId=2025-04-28
+    public int countLargestGroup(int n) {
+        int[] count = new int[37];
+        int maxCount = 0;
+        int rtValue = 0;
+        for (int num = 1; num <= n; num++) {
+            int sum = 0;
+            int numCount = num;
+            while (numCount > 0) {
+                sum += numCount % 10;
+                numCount /= 10;
+            }
+            int currentCount = count[sum] + 1;
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                rtValue = 1;
+            } else if (currentCount == maxCount) {
+                rtValue++;
+            }
+            count[sum] = currentCount;
+        }
+        return rtValue;
+    }
 }

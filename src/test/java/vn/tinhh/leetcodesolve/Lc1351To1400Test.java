@@ -35,4 +35,21 @@ class Lc1351To1400Test {
         int expect = 1;
         assertTrue(rtValue == expect);
     }
+
+
+    @Test
+    void LC1399_case1() {
+        int input = 13;
+        int rtValue = lc1351To1400.countLargestGroup(input);
+        int expect = 4;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1399_case2() {
+        int input = 2;
+        int rtValue = lc1351To1400.countLargestGroup(input);
+        int expect = 2;
+        assertTrue(rtValue == expect);
+    }
 }
