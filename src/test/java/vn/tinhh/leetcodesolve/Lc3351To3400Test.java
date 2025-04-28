@@ -50,7 +50,7 @@ class Lc3351To3400Test {
 
     @Test
     void LC3375_case3() {
-        int[] nums = {9,7,5,3};
+        int[] nums = {9, 7, 5, 3};
         int k = 1;
         int rtValue = lc3351To3400.minOperations(nums, k);
         int expected = 4;
@@ -59,10 +59,26 @@ class Lc3351To3400Test {
 
     @Test
     void LC3375_case727() {
-        int[] nums = {3,10,6,6,9,9,1};
+        int[] nums = {3, 10, 6, 6, 9, 9, 1};
         int k = 1;
         int rtValue = lc3351To3400.minOperations(nums, k);
         int expected = 4;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3392_case1() {
+        int[] nums = {1, 2, 1, 4, 1};
+        int rtValue = lc3351To3400.countSubarrays(nums);
+        int expected = 1;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3392_case2() {
+        int[] nums = {1, 1, 1};
+        int rtValue = lc3351To3400.countSubarrays(nums);
+        int expected = 0;
         assertTrue(rtValue == expected);
     }
 }

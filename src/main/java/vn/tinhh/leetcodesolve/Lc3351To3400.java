@@ -11,29 +11,6 @@ public class Lc3351To3400 {
     //3356
     //https://leetcode.com/problems/zero-array-transformation-ii/?envType=daily-question&envId=2025-03-13
     public int minZeroArray(int[] nums, int[][] queries) {
-//        int countZero = 0;
-//        for (int i = 0; i < nums.length; i++) {
-//            if (nums[i] == 0) {
-//                countZero++;
-//            }
-//        }
-//        if (countZero == nums.length) {
-//            return 0;
-//        }
-//        for (int i = 0; i < queries.length; i++) {
-//            for (int k = queries[i][0]; k <= queries[i][1]; k++) {
-//                if (nums[k] != 0) {
-//                    nums[k] = Math.max(0, nums[k] - queries[i][2]);
-//                    if (nums[k] == 0) {
-//                        countZero++;
-//                    }
-//                }
-//            }
-//            if (countZero == nums.length) {
-//                return i + 1;
-//            }
-//        }
-//        return -1;
         int n = nums.length;
         int[] line = new int[n + 1]; // Difference array
         int decrement = 0, k = 0; // Keep track of applied queries
@@ -68,5 +45,17 @@ public class Lc3351To3400 {
             }
         }
         return list.size();
+    }
+
+    //3392
+    //https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition/description/?envType=daily-question&envId=2025-04-28
+    public int countSubarrays(int[] nums) {
+        int rtValue = 0;
+        for (int i = 1; i < nums.length - 1; i++) {
+            if (nums[i] == 2 * (nums[i + 1] + nums[i - 1])) {
+                rtValue = rtValue + 1;
+            }
+        }
+        return rtValue;
     }
 }
