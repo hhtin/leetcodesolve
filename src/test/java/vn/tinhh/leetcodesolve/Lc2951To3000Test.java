@@ -14,6 +14,33 @@ class Lc2951To3000Test {
     private Lc2951To3000 lc2951To3000;
 
     @Test
+    void LC2962_case1() {
+        int[] input = {1, 3, 2, 3, 3};
+        int k = 2;
+        long rtValue = lc2951To3000.countSubarrays(input, k);
+        long expected = 6L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2962_case2() {
+        int[] input = {1, 4, 2, 1};
+        int k = 3;
+        long rtValue = lc2951To3000.countSubarrays(input, k);
+        long expected = 0L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC2962_case40() {
+        int[] input = {61, 23, 38, 23, 56, 40, 82, 56, 82, 82, 82, 70, 8, 69, 8, 7, 19, 14, 58, 42, 82, 10, 82, 78, 15, 82};
+        int k = 2;
+        long rtValue = lc2951To3000.countSubarrays(input, k);
+        long expected = 224L;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
     void LC2965_case1() {
         int[][] input = {{1, 3}, {2, 2}};
         int[] rtValue = lc2951To3000.findMissingAndRepeatedValues(input);

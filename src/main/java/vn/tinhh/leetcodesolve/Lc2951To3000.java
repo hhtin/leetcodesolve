@@ -8,6 +8,25 @@ import java.util.List;
 @Component
 public class Lc2951To3000 {
 
+    //2962
+    //https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times/?envType=daily-question&envId=2025-04-29
+    public long countSubarrays(int[] nums, int k) {
+        int maxi = Integer.MIN_VALUE;
+        for (int num : nums) maxi = Math.max(maxi, num);
+        int left = 0;
+        long maxiOccurence = 0;
+        long res = 0;
+        for (int right = 0; right < nums.length; right++) {
+            if (nums[right] == maxi) maxiOccurence++;
+            while (maxiOccurence >= k) {
+                if (nums[left] == maxi) maxiOccurence--;
+                left++;
+            }
+            res += left;
+        }
+        return res;
+    }
+
     //2965
     //https://leetcode.com/problems/find-missing-and-repeated-values/description/
     public int[] findMissingAndRepeatedValues(int[][] grid) {
@@ -35,7 +54,7 @@ public class Lc2951To3000 {
     public long numberOfPowerfulInt(long start, long finish, int limit, String s) {
         long suff = 0L;
 
-        for (char c : s.toCharArray()){
+        for (char c : s.toCharArray()) {
             suff = suff * 10 + c - '0';
         }
 
@@ -51,7 +70,7 @@ public class Lc2951To3000 {
         return getAvailNum(pf, limit) - getAvailNum(ps, limit);
     }
 
-    private long getAvailNum(long num, long limit){
+    private long getAvailNum(long num, long limit) {
         if (num == 0) return 0;
         if (limit == 9) return num;
 
@@ -59,10 +78,10 @@ public class Lc2951To3000 {
         long div = (long) Math.pow(10, digits);
         long res = 0L;
 
-        for (int i = digits; i >= 0; i--){
+        for (int i = digits; i >= 0; i--) {
             int d = (int) (num / div);
 
-            if (d > limit){
+            if (d > limit) {
                 return res + (long) Math.pow(limit + 1, i + 1);
             } else {
                 res += d * (long) Math.pow(limit + 1, i);
