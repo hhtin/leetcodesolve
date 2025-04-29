@@ -15,6 +15,24 @@ class Lc2551To2600Test {
     private Lc2551To2600 lc2551to2600;
 
     @Test
+    void LC2558_case1() {
+        int[] num = {25,64,9,4,100};
+        int k = 4;
+        long returnValue = lc2551to2600.pickGifts(num, k);
+        long expected = 29L;
+        assertTrue(returnValue == expected);
+    }
+
+    @Test
+    void LC2558_case2() {
+        int[] num = {1,1,1,1};
+        int k = 4;
+        long returnValue = lc2551to2600.pickGifts(num, k);
+        long expected = 4L;
+        assertTrue(returnValue == expected);
+    }
+
+    @Test
     void LC2560_case1() {
         int[] num = {2, 3, 5, 9};
         int k = 2;
@@ -25,7 +43,7 @@ class Lc2551To2600Test {
 
     @Test
     void LC2560_case2() {
-        int[] num = {2,7,9,3,1};
+        int[] num = {2, 7, 9, 3, 1};
         int k = 2;
         int returnValue = lc2551to2600.minCapability(num, k);
         int expected = 2;
