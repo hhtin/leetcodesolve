@@ -75,4 +75,28 @@ class Lc3301To3350Test {
         assertTrue(rtValue == expected);
     }
 
+    @Test
+    void LC3341_case1() {
+        int[][] moveTime = {{0, 4}, {4, 4}};
+        int rtValue = lc3301To3350.minTimeToReach(moveTime);
+        int expected = 6;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3341_case2() {
+        int[][] moveTime = {{0, 0, 0}, {0, 0, 0}};
+        int rtValue = lc3301To3350.minTimeToReach(moveTime);
+        int expected = 3;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3341_case3() {
+        int[][] moveTime = {{0, 1}, {1, 2}};
+        int rtValue = lc3301To3350.minTimeToReach(moveTime);
+        int expected = 3;
+        assertTrue(rtValue == expected);
+    }
+
 }
