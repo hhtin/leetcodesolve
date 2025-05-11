@@ -29,4 +29,28 @@ class Lc1501To1550Test {
         int expect = 0;
         assertTrue(rtValue == expect);
     }
+
+    @Test
+    void LC1550_case1() {
+        int[] arr = {2, 6, 4, 1};
+        boolean rtValue = lc1501To1550.threeConsecutiveOdds(arr);
+        boolean expect = false;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1550_case2() {
+        int[] arr = {1, 2, 34, 3, 4, 5, 7, 23, 12};
+        boolean rtValue = lc1501To1550.threeConsecutiveOdds(arr);
+        boolean expect = true;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1550_case38() {
+        int[] arr = {102,780,919,897,901};
+        boolean rtValue = lc1501To1550.threeConsecutiveOdds(arr);
+        boolean expect = true;
+        assertTrue(rtValue == expect);
+    }
 }

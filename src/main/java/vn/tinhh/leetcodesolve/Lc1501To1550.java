@@ -23,4 +23,28 @@ public class Lc1501To1550 {
         }
         return rtValue;
     }
+
+    //1550
+    //https://leetcode.com/problems/three-consecutive-odds/?envType=daily-question&envId=2025-05-11
+    public boolean threeConsecutiveOdds(int[] arr) {
+        if (arr.length < 3) return false;
+        int[] temp = new int[3];
+        int countOdd = 0;
+        for (int i = 0; i < 3; i++) {
+            if (arr[i] % 2 != 0) countOdd++;
+            temp[i] = arr[i];
+        }
+        if (countOdd == 3) return true;
+        for (int i = 3; i < arr.length; i++) {
+            if (temp[i % 3] % 2 != 0) {
+                countOdd--;
+            }
+            if (arr[i] % 2 != 0) {
+                countOdd++;
+            }
+            temp[i % 3] = arr[i];
+            if (countOdd == 3) return true;
+        }
+        return false;
+    }
 }
