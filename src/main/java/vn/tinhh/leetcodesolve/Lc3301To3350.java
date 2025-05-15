@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import vn.tinhh.leetcodesolve.utils.Utils;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 @Component
 public class Lc3301To3350 {
@@ -20,6 +17,34 @@ public class Lc3301To3350 {
     // Same as 3305. Count of Substrings Containing Every Vowel and K Consonants I
     public long countOfSubstrings(String word, int k) {
         return utils.substringsWithAtMost(word, k) - utils.substringsWithAtMost(word, k - 1);
+    }
+
+    //3337
+    //https://leetcode.com/problems/total-characters-in-string-after-transformations-ii/description/?envType=daily-question&envId=2025-05-14
+    public int lengthAfterTransformations(String s, int t, List<Integer> nums) {
+        for (int i = 0; i < t; i++) {
+            String newString = "";
+            for (int j = 0; j < s.length(); j++) {
+                Character current = s.charAt(j);
+                int pos = current - 97;
+                int max = nums.get(pos);
+                for (int k = 1; k <= max; k++) {
+                    Character character = (char) (s.charAt(j) + k);
+                    if (character > 122) {
+                        character = (char) (character - 26);
+                    }
+                    newString = newString + String.valueOf(character);
+                }
+            }
+            if (i == t - 1 && newString.length() > 100000007) {
+                return 100000007;
+            }
+            if (i == t - 1) {
+                return newString.length();
+            }
+            s = newString;
+        }
+        return 0;
     }
 
     //3341

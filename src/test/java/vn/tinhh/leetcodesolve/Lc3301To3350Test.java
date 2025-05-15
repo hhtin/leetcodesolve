@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
@@ -72,6 +75,26 @@ class Lc3301To3350Test {
         int k = 2;
         long rtValue = lc3301To3350.countOfSubstrings(word, k);
         long expected = 3;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3337_case1() {
+        String s = "abcyy";
+        int t = 2;
+        List<Integer> nums = List.of(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2);
+        int rtValue = lc3301To3350.lengthAfterTransformations(s, t, nums);
+        int expected = 7;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3337_case2() {
+        String s = "azbk";
+        int t = 1;
+        List<Integer> nums = List.of(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+        int rtValue = lc3301To3350.lengthAfterTransformations(s, t, nums);
+        int expected = 8;
         assertTrue(rtValue == expected);
     }
 
