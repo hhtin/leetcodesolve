@@ -32,4 +32,24 @@ public class Lc2101To2150 {
         }
         return rtValue;
     }
+
+    //2138
+    //https://leetcode.com/problems/divide-a-string-into-groups-of-size-k/description/?envType=daily-question&envId=2025-06-22
+    public String[] divideString(String s, int k, char fill) {
+        int numOfSpaces = s.length() / k;
+        if (s.length() % k != 0) {
+            numOfSpaces += 1;
+        }
+        String[] result = new String[numOfSpaces];
+        for (int i = 0; i < numOfSpaces; i++) {
+            result[i] = s.substring(i * k, Math.min((i + 1) * k, s.length()));
+        }
+        if (result[numOfSpaces - 1].length() != k) {
+            int numOfSpacesMissing = k - result[numOfSpaces - 1].length();
+            for (int i = 0; i < numOfSpacesMissing; i++) {
+                result[numOfSpaces - 1] = result[numOfSpaces - 1] + fill;
+            }
+        }
+        return result;
+    }
 }

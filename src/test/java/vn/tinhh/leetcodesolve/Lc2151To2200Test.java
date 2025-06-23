@@ -32,21 +32,4 @@ class Lc2151To2200Test {
         assertTrue(Arrays.equals(rtValue, expected));
     }
 
-    @Test
-    void LC2226_case1() {
-        int[] candies = {5, 8, 6};
-        long k = 3;
-        int rtValue = lc2151To2200.maximumCandies(candies, k);
-        int expected = 5;
-        assertTrue(rtValue == expected);
-    }
-
-    @Test
-    void LC2226_case2() {
-        int[] candies = {2, 5};
-        long k = 11;
-        int rtValue = lc2151To2200.maximumCandies(candies, k);
-        int expected = 0;
-        assertTrue(rtValue == expected);
-    }
 }
