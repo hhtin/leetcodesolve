@@ -19,6 +19,21 @@ public class Lc3301To3350 {
         return utils.substringsWithAtMost(word, k) - utils.substringsWithAtMost(word, k - 1);
     }
 
+    //3330
+    //https://leetcode.com/problems/find-the-original-typed-string-i/?envType=daily-question&envId=2025-07-01
+    public int possibleStringCount(String word) {
+        int rtValue = 1;
+        char current = word.charAt(0);
+        for (int pos = 1; pos < word.length(); pos++) {
+            if (current == word.charAt(pos)) {
+                rtValue++;
+            } else {
+                current = word.charAt(pos);
+            }
+        }
+        return rtValue;
+    }
+
     //3337
     //https://leetcode.com/problems/total-characters-in-string-after-transformations-ii/description/?envType=daily-question&envId=2025-05-14
     public int lengthAfterTransformations(String s, int t, List<Integer> nums) {

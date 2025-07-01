@@ -79,6 +79,30 @@ class Lc3301To3350Test {
     }
 
     @Test
+    void LC3330_case1() {
+        String word = "abbcccc";
+        int rtValue = lc3301To3350.possibleStringCount(word);
+        int expected = 5;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3330_case2() {
+        String word = "abcd";
+        int rtValue = lc3301To3350.possibleStringCount(word);
+        int expected = 1;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3330_case3() {
+        String word = "aaaa";
+        int rtValue = lc3301To3350.possibleStringCount(word);
+        int expected = 4;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
     void LC3337_case1() {
         String s = "abcyy";
         int t = 2;
@@ -92,7 +116,7 @@ class Lc3301To3350Test {
     void LC3337_case2() {
         String s = "azbk";
         int t = 1;
-        List<Integer> nums = List.of(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2);
+        List<Integer> nums = List.of(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
         int rtValue = lc3301To3350.lengthAfterTransformations(s, t, nums);
         int expected = 8;
         assertTrue(rtValue == expected);
