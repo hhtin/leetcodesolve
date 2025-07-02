@@ -103,6 +103,33 @@ class Lc3301To3350Test {
     }
 
     @Test
+    void LC3333_case1() {
+        String word = "aabbccdd";
+        int k = 7;
+        int rtValue = lc3301To3350.possibleStringCount(word, k);
+        int expected = 5;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3333_case2() {
+        String word = "aabbccdd";
+        int k = 8;
+        int rtValue = lc3301To3350.possibleStringCount(word, k);
+        int expected = 1;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3333_case3() {
+        String word = "aaabbb";
+        int k = 3;
+        int rtValue = lc3301To3350.possibleStringCount(word, k);
+        int expected = 8;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
     void LC3337_case1() {
         String s = "abcyy";
         int t = 2;
