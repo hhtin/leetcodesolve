@@ -16,6 +16,22 @@ class Lc3301To3350Test {
     private Lc3301To3350 lc3301To3350;
 
     @Test
+    void LC3304_case1() {
+        int k = 5;
+        char rtValue = lc3301To3350.kthCharacter(k);
+        char expected = 'b';
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3304_case2() {
+        int k = 10;
+        char rtValue = lc3301To3350.kthCharacter(k);
+        char expected = 'c';
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
     void LC3306_case1() {
         String word = "aeioqq";
         int k = 1;

@@ -12,6 +12,21 @@ public class Lc3301To3350 {
     @Autowired
     private Utils utils;
 
+    //3304
+    //https://leetcode.com/problems/find-the-k-th-character-in-string-game-i/?envType=daily-question&envId=2025-07-03
+    public char kthCharacter(int k) {
+        StringBuilder word = new StringBuilder("a");
+        while (word.length() < k) {
+            StringBuilder newWord = new StringBuilder();
+            for (int i = 0; i < word.length(); i++) {
+                char newChar = (char) (word.charAt(i) + 1);
+                newWord.append(newChar);
+            }
+            word.append(newWord);
+        }
+        return word.toString().charAt(k - 1);
+    }
+
     //3306
     //https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/?envType=daily-question&envId=2025-03-10
     // Same as 3305. Count of Substrings Containing Every Vowel and K Consonants I
@@ -36,7 +51,7 @@ public class Lc3301To3350 {
 
     //3333
     //https://leetcode.com/problems/find-the-original-typed-string-ii/?envType=daily-question&envId=2025-07-02
-    private static final int MOD = (int)1e9 + 7;
+    private static final int MOD = (int) 1e9 + 7;
 
     public int possibleStringCount(String word, int k) {
         if (word.isEmpty()) return 0;
@@ -55,7 +70,7 @@ public class Lc3301To3350 {
         long total = 1;
         for (int num : groups) total = (total * num) % MOD;
 
-        if (k <= groups.size()) return (int)total;
+        if (k <= groups.size()) return (int) total;
 
         int[] dp = new int[k];
         dp[0] = 1;
@@ -65,14 +80,14 @@ public class Lc3301To3350 {
             for (int s = 0; s < k; s++) {
                 if (s > 0) sum = (sum + dp[s - 1]) % MOD;
                 if (s > num) sum = (sum - dp[s - num - 1] + MOD) % MOD;
-                newDp[s] = (int)sum;
+                newDp[s] = (int) sum;
             }
             dp = newDp;
         }
         long invalid = 0;
         for (int s = groups.size(); s < k; s++) invalid = (invalid + dp[s]) % MOD;
 
-        return (int)((total - invalid + MOD) % MOD);
+        return (int) ((total - invalid + MOD) % MOD);
     }
 
     //3337
