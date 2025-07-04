@@ -95,6 +95,24 @@ class Lc3301To3350Test {
     }
 
     @Test
+    void LC3307_case1() {
+        long k = 5;
+        int[] operations = {0, 0, 0};
+        char rtValue = lc3301To3350.kthCharacter(k, operations);
+        char expected = 'a';
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3307_case2() {
+        long k = 10;
+        int[] operations = {0, 1, 0, 1};
+        char rtValue = lc3301To3350.kthCharacter(k, operations);
+        char expected = 'b';
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
     void LC3330_case1() {
         String word = "abbcccc";
         int rtValue = lc3301To3350.possibleStringCount(word);
