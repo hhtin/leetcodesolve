@@ -36,6 +36,30 @@ class Lc1351To1400Test {
         assertTrue(rtValue == expect);
     }
 
+    @Test
+    void LC1394_case1() {
+        int[] arr = {2, 2, 3, 4};
+        int rtValue = lc1351To1400.findLucky(arr);
+        int expect = 2;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1394_case2() {
+        int[] arr = {1, 2, 2, 3, 3, 3};
+        int rtValue = lc1351To1400.findLucky(arr);
+        int expect = 3;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1394_case3() {
+        int[] arr = {2, 2, 2, 3, 3};
+        int rtValue = lc1351To1400.findLucky(arr);
+        int expect = -1;
+        assertTrue(rtValue == expect);
+    }
+
 
     @Test
     void LC1399_case1() {

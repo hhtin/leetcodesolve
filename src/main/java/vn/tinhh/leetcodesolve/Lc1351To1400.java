@@ -28,6 +28,21 @@ public class Lc1351To1400 {
         return count;
     }
 
+    //1394
+    //https://leetcode.com/problems/find-lucky-integer-in-an-array/description/?envType=daily-question&envId=2025-07-05
+    public int findLucky(int[] arr) {
+        int[] count = new int[501];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i]]++;
+        }
+        for (int i = count.length - 1; i > 0; i--) {
+            if (count[i] == i) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     //1399
     //https://leetcode.com/problems/count-largest-group/?envType=daily-question&envId=2025-04-28
     public int countLargestGroup(int n) {
