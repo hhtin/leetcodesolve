@@ -3,7 +3,7 @@ package vn.tinhh.leetcodesolve;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LC1251To1300 {
+public class Lc1251To1300 {
 
     //1298
     //https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes/?envType=daily-question&envId=2025-06-03

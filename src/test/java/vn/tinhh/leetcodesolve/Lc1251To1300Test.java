@@ -7,10 +7,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class LC1251To1300Test {
+class Lc1251To1300Test {
 
     @Autowired
-    private LC1251To1300 lc1251To1300;
+    private Lc1251To1300 lc1251To1300;
 
     @Test
     void LC1298_case1() {
