@@ -13,6 +13,22 @@ class Lc1351To1400Test {
     private Lc1351To1400 lc1351To1400;
 
     @Test
+    void LC1353_case1() {
+        int[][] events = {{1, 2}, {2, 3}, {3, 4}};
+        int rtValue = lc1351To1400.maxEvents(events);
+        int expect = 3;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1353_case2() {
+        int[][] events = {{1, 2}, {2, 3}, {3, 4}, {1, 2}};
+        int rtValue = lc1351To1400.maxEvents(events);
+        int expect = 4;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
     void LC1358_case1() {
         String input = "abcabc";
         int rtValue = lc1351To1400.numberOfSubstrings(input);
