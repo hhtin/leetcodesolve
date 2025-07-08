@@ -15,6 +15,33 @@ class Lc1751To1800Test {
     private Lc1751To1800 lc1751To1800;
 
     @Test
+    void LC1751_case1() {
+        int[][] events = {{1, 2, 4}, {3, 4, 3}, {2, 3, 1}};
+        int k = 2;
+        int rtValue = lc1751To1800.maxValue(events, k);
+        int expect = 7;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1751_case2() {
+        int[][] events = {{1, 2, 4}, {3, 4, 3}, {2, 3, 10}};
+        int k = 2;
+        int rtValue = lc1751To1800.maxValue(events, k);
+        int expect = 10;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
+    void LC1751_case3() {
+        int[][] events = {{1, 1, 1}, {2, 2, 2}, {3, 3, 3}, {4, 4, 4}};
+        int k = 3;
+        int rtValue = lc1751To1800.maxValue(events, k);
+        int expect = 9;
+        assertTrue(rtValue == expect);
+    }
+
+    @Test
     void LC1780_case1() {
         int input = 10;
         boolean rtValue = lc1751To1800.checkPowersOfThree(input);
