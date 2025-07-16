@@ -13,6 +13,30 @@ class Lc3201To3250Test {
     private Lc3201To3250 lc3201To3250;
 
     @Test
+    void LC3201_case1() {
+        int[] nums = {1, 2, 3, 4};
+        int rtValue = lc3201To3250.maximumLength(nums);
+        int expected = 4;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3201_case2() {
+        int[] nums = {1, 2, 1, 1, 2, 1, 2};
+        int rtValue = lc3201To3250.maximumLength(nums);
+        int expected = 6;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
+    void LC3201_case3() {
+        int[] nums = {1, 3};
+        int rtValue = lc3201To3250.maximumLength(nums);
+        int expected = 2;
+        assertTrue(rtValue == expected);
+    }
+
+    @Test
     void LC3208_case1() {
         int[] nums = {0, 1, 0, 1, 0};
         int k = 3;
